@@ -1,0 +1,1 @@
+select DATE,YEAR,MONTH,DAY from {{ source('PC_DBT_DB', 'STG_DATE') }}

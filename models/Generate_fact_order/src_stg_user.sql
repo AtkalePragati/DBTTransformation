@@ -1,0 +1,1 @@
+select * from {{ source('PC_DBT_DB', 'STG_USER') }}
