@@ -1,0 +1,32 @@
+version: 2
+
+sources: 
+  - name: PC_DBT_DB
+    database: PC_DBT_DB 
+    schema: TEMP
+    tables:
+      - name: STG_ACCOUNT
+        columns:
+        - name: ACCOUNT_ID
+          tests:
+            - unique
+            - not_null
+      - name: STG_USER
+        columns: 
+        - name: USER_ID
+          tests:
+           - not_null
+        - name: status
+          tests:
+            - accepted_values:
+                values:
+                  - 'TRUE'
+                  - 'FALSE' 
+      - name: STG_DATE
+      - name: STAG_ORDER
+  - name: DB_STUD   
+    database: PC_DBT_DB 
+    schema: DBT_ATKALEPRAGATI
+    tables:
+      - name: STUDENT_CLG
+      - name: STUD_MARKS
